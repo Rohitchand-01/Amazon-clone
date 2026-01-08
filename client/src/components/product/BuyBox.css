@@ -1,0 +1,154 @@
+.buy-box {
+  background: var(--amazon-white);
+  border: 1px solid var(--amazon-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-lg);
+  position: sticky;
+  top: 80px;
+  max-width: 350px;
+}
+
+.buy-box-price {
+  margin-bottom: var(--space-md);
+}
+
+.price-list {
+  font-size: var(--body-sm);
+  color: var(--amazon-text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.price-list-value {
+  text-decoration: line-through;
+}
+
+.price-current {
+  font-size: var(--heading-xl);
+  font-weight: 400;
+  color: var(--amazon-price);
+  margin-bottom: var(--space-xs);
+}
+
+.price-savings {
+  font-size: var(--body-sm);
+  color: var(--amazon-success);
+  margin-top: var(--space-xs);
+}
+
+.buy-box-prime {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) 0;
+  border-top: 1px solid var(--amazon-border);
+  border-bottom: 1px solid var(--amazon-border);
+}
+
+.prime-benefit {
+  font-size: var(--body-sm);
+  color: var(--amazon-text);
+}
+
+.buy-box-stock {
+  margin-bottom: var(--space-md);
+}
+
+.stock-in {
+  color: var(--amazon-success);
+  font-size: var(--body-md);
+  font-weight: 600;
+}
+
+.stock-out {
+  color: var(--amazon-price);
+  font-size: var(--body-md);
+  font-weight: 600;
+}
+
+.buy-box-quantity {
+  margin-bottom: var(--space-md);
+}
+
+.buy-box-quantity label {
+  display: block;
+  font-size: var(--body-sm);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--amazon-text);
+}
+
+.quantity-select {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 1px solid var(--amazon-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--body-md);
+  background-color: var(--amazon-white);
+  cursor: pointer;
+}
+
+.quantity-select:focus {
+  outline: none;
+  border-color: var(--amazon-orange);
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.1);
+}
+
+.buy-box-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.btn-add-to-cart {
+  background-color: var(--amazon-yellow);
+}
+
+.btn-add-to-cart:hover:not(:disabled) {
+  background-color: var(--amazon-yellow-hover);
+}
+
+.btn-buy-now {
+  background-color: var(--amazon-orange);
+  color: var(--amazon-white);
+}
+
+.btn-buy-now:hover:not(:disabled) {
+  background-color: var(--amazon-orange-dark);
+}
+
+.buy-box-security {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--body-xs);
+  color: var(--amazon-text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.security-icon {
+  font-size: 16px;
+}
+
+.buy-box-ships-from,
+.buy-box-sold-by {
+  font-size: var(--body-xs);
+  color: var(--amazon-text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.buy-box-ships-from strong,
+.buy-box-sold-by strong {
+  color: var(--amazon-text);
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .buy-box {
+    position: relative;
+    top: 0;
+    max-width: 100%;
+    margin-top: var(--space-xl);
+  }
+}

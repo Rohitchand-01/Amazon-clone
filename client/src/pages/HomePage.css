@@ -1,0 +1,99 @@
+.home-page {
+  background-color: var(--amazon-background);
+}
+
+.home-hero {
+  background: linear-gradient(135deg, var(--amazon-nav-dark) 0%, var(--amazon-nav-light) 100%);
+  color: var(--amazon-white);
+  padding: var(--space-3xl) 0;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: var(--heading-xl);
+  font-weight: 400;
+  margin-bottom: var(--space-md);
+}
+
+.hero-content p {
+  font-size: var(--body-lg);
+  margin-bottom: var(--space-xl);
+  opacity: 0.9;
+}
+
+.hero-button {
+  background-color: var(--amazon-yellow);
+  color: var(--amazon-text);
+  border: none;
+  padding: var(--space-md) var(--space-2xl);
+  font-size: var(--body-lg);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.hero-button:hover {
+  background-color: var(--amazon-yellow-hover);
+}
+
+.home-section {
+  padding: var(--space-3xl) 0;
+}
+
+.section-title {
+  font-size: var(--heading-lg);
+  font-weight: 400;
+  color: var(--amazon-text);
+  margin-bottom: var(--space-xl);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+}
+
+.category-card {
+  background-color: var(--amazon-white);
+  border: 1px solid var(--amazon-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xl);
+  text-align: center;
+  text-decoration: none;
+  color: var(--amazon-text);
+  transition: all 0.2s ease;
+}
+
+.category-card:hover {
+  border-color: var(--amazon-orange);
+  box-shadow: var(--shadow-hover);
+}
+
+.category-icon {
+  font-size: 48px;
+  margin-bottom: var(--space-md);
+}
+
+.category-card h3 {
+  font-size: var(--heading-sm);
+  font-weight: 400;
+  color: var(--amazon-text);
+}
+
+.loading {
+  text-align: center;
+  padding: var(--space-3xl);
+  color: var(--amazon-text-secondary);
+  font-size: var(--body-lg);
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: var(--heading-lg);
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

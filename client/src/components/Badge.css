@@ -1,0 +1,38 @@
+.badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: var(--body-xs);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.badge-default {
+  background-color: var(--amazon-background);
+  color: var(--amazon-text);
+}
+
+.badge-prime {
+  background-color: transparent;
+  color: #00A8E1;
+  border: 1px solid #00A8E1;
+  font-weight: 600;
+}
+
+.badge-sponsored {
+  background-color: transparent;
+  color: var(--amazon-text-secondary);
+  font-size: 11px;
+}
+
+.badge-success {
+  background-color: transparent;
+  color: var(--amazon-success);
+  font-weight: 600;
+}
+
+.badge-price {
+  background-color: transparent;
+  color: var(--amazon-price);
+  font-weight: 600;
+}

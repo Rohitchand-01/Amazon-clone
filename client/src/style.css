@@ -1,0 +1,36 @@
+/* Amazon Clone Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #EAEDED;
+  color: #0F1111;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding-top: 0;
+}
+
+a {
+  color: #007185;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FF9900;
+  text-decoration: underline;
+}

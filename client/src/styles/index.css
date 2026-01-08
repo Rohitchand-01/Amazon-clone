@@ -1,0 +1,32 @@
+@import './variables.css';
+@import './animations.css';
+
+/* Additional Global Styles */
+a {
+  color: var(--amazon-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--amazon-orange);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--amazon-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--amazon-border);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B2B2B2;
+}

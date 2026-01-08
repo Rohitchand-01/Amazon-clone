@@ -1,0 +1,53 @@
+.input-wrapper {
+  margin-bottom: var(--space-md);
+}
+
+.input-label {
+  display: block;
+  font-size: var(--body-sm);
+  font-weight: 600;
+  color: var(--amazon-text);
+  margin-bottom: var(--space-xs);
+}
+
+.required-asterisk {
+  color: var(--amazon-price);
+  margin-left: 2px;
+}
+
+.input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--amazon-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--body-md);
+  font-family: var(--font-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  color: var(--amazon-text);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--amazon-orange);
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.1);
+}
+
+.input::placeholder {
+  color: var(--amazon-text-secondary);
+}
+
+.input-error {
+  border-color: var(--amazon-price);
+}
+
+.input-error:focus {
+  border-color: var(--amazon-price);
+  box-shadow: 0 0 0 3px rgba(177, 39, 4, 0.1);
+}
+
+.input-error-message {
+  display: block;
+  color: var(--amazon-price);
+  font-size: var(--body-xs);
+  margin-top: var(--space-xs);
+}

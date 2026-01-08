@@ -1,0 +1,104 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+enum OrderStatus {
+  pending
+  confirmed
+  shipped
+  delivered
+}
+
+model Category {
+  id        Int        @id @default(autoincrement())
+  name      String     @db.VarChar(100)
+  parentId  Int?       @map("parent_id")
+  parent    Category?  @relation("CategoryToCategory", fields: [parentId], references: [id], onDelete: SetNull)
+  children  Category[] @relation("CategoryToCategory")
+  products  Product[]
+  createdAt DateTime   @default(now()) @map("created_at")
+  updatedAt DateTime   @updatedAt @map("updated_at")
+
+  @@map("categories")
+}
+
+model Product {
+  id            Int            @id @default(autoincrement())
+  name          String         @db.VarChar(255)
+  description   String?        @db.Text
+  price         Decimal        @db.Decimal(10, 2)
+  listPrice     Decimal?       @map("list_price") @db.Decimal(10, 2)
+  categoryId    Int?           @map("category_id")
+  category      Category?      @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  brand         String?        @db.VarChar(100)
+  stockQuantity Int            @default(0) @map("stock_quantity")
+  rating        Decimal?       @db.Decimal(2, 1)
+  reviewCount   Int            @default(0) @map("review_count")
+  isPrime       Boolean        @default(false) @map("is_prime")
+  images        ProductImage[]
+  cartItems     CartItem[]
+  orderItems    OrderItem[]
+  createdAt     DateTime       @default(now()) @map("created_at")
+  updatedAt     DateTime       @updatedAt @map("updated_at")
+
+  @@map("products")
+}
+
+model ProductImage {
+  id           Int      @id @default(autoincrement())
+  productId    Int      @map("product_id")
+  product      Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  imageUrl     String   @db.VarChar(500) @map("image_url")
+  isPrimary    Boolean  @default(false) @map("is_primary")
+  displayOrder Int      @default(0) @map("display_order")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  @@map("product_images")
+}
+
+model CartItem {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @default(1) @map("user_id")
+  productId Int      @map("product_id")
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  quantity  Int      @default(1)
+  addedAt   DateTime @default(now()) @map("added_at")
+
+  @@map("cart_items")
+}
+
+model Order {
+  id              Int         @id @default(autoincrement())
+  userId          Int         @default(1) @map("user_id")
+  orderNumber     String      @unique @db.VarChar(50) @map("order_number")
+  totalAmount     Decimal     @db.Decimal(10, 2) @map("total_amount")
+  status          OrderStatus @default(pending)
+  shippingAddress String      @db.Text @map("shipping_address")
+  items           OrderItem[]
+  createdAt       DateTime    @default(now()) @map("created_at")
+  updatedAt       DateTime    @updatedAt @map("updated_at")
+
+  @@map("orders")
+}
+
+model OrderItem {
+  id        Int      @id @default(autoincrement())
+  orderId   Int      @map("order_id")
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId Int      @map("product_id")
+  product   Product  @relation(fields: [productId], references: [id])
+  quantity  Int
+  price     Decimal  @db.Decimal(10, 2)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("order_items")
+}

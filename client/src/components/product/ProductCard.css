@@ -1,0 +1,124 @@
+.product-card {
+  background: var(--amazon-white);
+  border: 1px solid var(--amazon-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-lg);
+  transition: all 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  border-color: #C7C7C7;
+  box-shadow: var(--shadow-hover);
+}
+
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-image-wrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.product-sponsored {
+  margin-bottom: var(--space-xs);
+}
+
+.product-title {
+  font-size: var(--body-md);
+  font-weight: 400;
+  color: var(--amazon-text);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.8em;
+  margin: 0;
+}
+
+.product-rating {
+  margin: var(--space-xs) 0;
+}
+
+.product-price-section {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  margin: var(--space-xs) 0;
+}
+
+.product-price {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  color: var(--amazon-price);
+}
+
+.product-list-price {
+  font-size: var(--body-sm);
+  color: var(--amazon-text-secondary);
+  text-decoration: line-through;
+}
+
+.product-prime {
+  margin: var(--space-xs) 0;
+}
+
+.product-delivery {
+  margin-top: var(--space-xs);
+}
+
+.delivery-text {
+  font-size: var(--body-sm);
+  color: var(--amazon-text);
+}
+
+.delivery-text strong {
+  color: var(--amazon-success);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    padding: var(--space-md);
+  }
+
+  .product-title {
+    font-size: var(--body-sm);
+  }
+
+  .product-price {
+    font-size: var(--heading-sm);
+  }
+}

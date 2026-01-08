@@ -1,0 +1,16 @@
+.card {
+  background: var(--amazon-white);
+  border: 1px solid var(--amazon-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-lg);
+  transition: all 0.2s ease;
+}
+
+.card-hover:hover {
+  border-color: #C7C7C7;
+  box-shadow: var(--shadow-hover);
+}
+
+.card-clickable {
+  cursor: pointer;
+}
